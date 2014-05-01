@@ -1,0 +1,34 @@
+{
+		  "apache2":{
+					 "default_site_enabled": true,
+					 "docroot_dir": "/var/www/html/",
+					 "default_modules": "mod_php",
+					 "default_modules": "mod_ssl",
+					 "default_modules": "mod_rewrite"
+		  },
+		  "mysql":{
+					 "server_root_password": "1234",
+					 "server_repl_password": "1234",
+					 "server_debian_password": "1234",
+					 "allow_remote_root":true
+		  },
+		  "wordpress":{
+					 "url": "http://ja.wordpress.org/wordpress-3.8.1-ja.tar.gz",
+					 "db": { "pass":"1234" },
+					 "languages":{ "lang":"ja"}
+		  },
+		  "run_list":[
+					 "yum", 
+					 "vim",
+					 "zsh",
+					 "git",
+					 "iptables",
+					 "logrotate",
+					 "apache2",
+					 "openssl",
+					 "mysql::server",
+					 "php",
+					 "wordpress",
+					 "recipe[iptables-enable]"
+		  ]
+}
